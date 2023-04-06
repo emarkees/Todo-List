@@ -153,6 +153,14 @@ ul li {
   text-align: center;
 }
 
+.error {
+  display: none;
+  font-size: 1rem;
+  color: red;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   body {
     align-items: center;
