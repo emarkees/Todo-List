@@ -1,0 +1,174 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textTodo {
+  font-family: 'poppins', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  background: #fff;
+}
+
+.buttonload {
+  display: flex;
+  width: auto;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.fa-refresh {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: flex-end;
+  padding: 0.5rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  align-self: center;
+  border: 0.1rem solid grey;
+}
+
+.todoContainer {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  gap: 0;
+  padding: 0.5rem;
+}
+
+.right {
+  display: flex;
+  order: 2;
+}
+
+.listSection {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.listcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 0;
+  order: 2;
+}
+
+.checkBox {
+  display: flex;
+  width: auto;
+  order: 1;
+}
+
+.newAddList {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  margin: 0;
+  order: 1;
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  border: none;
+}
+
+::placeholder {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.vertical {
+  display: flex;
+  align-items: flex-end;
+  order: 3;
+}
+
+.button {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.addBtn {
+  display: flex;
+  align-self: center;
+  width: 2rem;
+  background: #000;
+}
+
+@media (min-width: 768px) {
+  body {
+    align-items: center;
+    width: auto;
+  }
+
+  .todo {
+    display: flex;
+    width: 30%;
+    justify-self: center;
+  }
+}
