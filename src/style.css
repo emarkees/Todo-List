@@ -178,6 +178,7 @@ ul li {
   cursor: pointer;
   width: 2rem;
   height: 1.5rem;
+  color: #badb39;
 }
 
 .error {
