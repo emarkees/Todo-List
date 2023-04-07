@@ -19,7 +19,7 @@ const UpdateList = () => {
       setTimeout(() => {
         $error.style.display = 'none';
       },1500);
-    }$data.value = '';
+    }$list.value = '';
   });
 
 }; export default UpdateList;

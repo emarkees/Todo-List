@@ -64,8 +64,7 @@ export default class Todos {
       <i class="fa-solid fa-ellipsis-vertical vertical" ></i>
       <i class="fa-solid fa-trash-can delete" id="${item.list}"></i>
     </ul>
-    <hr>
-    `,
+      `,
     );
     localStorage.setItem('todoList', JSON.stringify(this.todoList));
     // Add a click event listener to the remove button for the new todo item

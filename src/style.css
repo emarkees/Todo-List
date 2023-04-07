@@ -8,6 +8,7 @@ body {
   font-family: 'poppins', sans-serif;
   font-weight: 300;
   font-size: 1rem;
+  color: #fff;
 }
 
 .container {
@@ -28,7 +29,6 @@ hr {
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
-  background: #fff;
 }
 
 .buttonload {
@@ -64,7 +64,9 @@ ul li {
   align-self: center;
   border: 0.1rem solid grey;
   padding: 0;
+  background: #9cc6ee;
 }
+
 
 .todoContainer {
   display: flex;
@@ -126,10 +128,11 @@ ul li {
   display: flex;
   width: 100%;
   border: none;
-  padding: 0rem;
+  padding: 0.2rem;
   margin: 0;
   order: 1;
-  gap: 0rem;
+  gap: 0.5rem;
+  justify-content: space-around;
 }
 
 .input {
@@ -148,15 +151,15 @@ ul li {
   display: flex;
   align-items: flex-end;
   order: 3;
+  color: gray;
 }
 
 .delete {
   display: flex;
   align-items: flex-end;
   order: 3;
+  color: red;
 }
-
-
 
 .button {
   display: flex;
@@ -194,7 +197,7 @@ ul li {
 
   .todo {
     display: flex;
-    width: 50%;
+    width: 30%;
     justify-self: center;
   }
 }
