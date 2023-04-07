@@ -1,4 +1,4 @@
-  /*function handleCheckboxChange(index) {
+/* function handleCheckboxChange(index) {
     const $checkbox = document.querySelectorAll('input[type="checkbox"]') [index];
     const $delete = document.querySelectorAll('.delete') [index];
       $checkbox.addEventListener ('change', () => {

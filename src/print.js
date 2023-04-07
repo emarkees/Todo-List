@@ -33,22 +33,22 @@ export default class Todos {
           });
         }
       });
-    };
-  };
+    }
+  }
+
   // Define a remove method to remove a todo item from the DOM and the todoLis array
   remove = (idSelected) => {
-    const parentElement = document.getElementById(idSelected).parentElement;
+    const { parentElement } = document.getElementById(idSelected);
     if (parentElement) {
       parentElement.remove();
     }
-    
+
     const indexToRemove = this.todoList.findIndex((e) => e.list === idSelected);
     if (indexToRemove > -1) {
       this.todoList.splice(indexToRemove, 1);
       localStorage.setItem('todoList', JSON.stringify(this.todoList));
     }
   };
-  
 
   // Define an add method to add a new todo item to the DOM and the todoList array
   add = (list) => {
@@ -68,10 +68,9 @@ export default class Todos {
     );
     localStorage.setItem('todoList', JSON.stringify(this.todoList));
     // Add a click event listener to the remove button for the new todo item
-    const $removeButton = document.getElementById(`${item.list}`)
+    const $removeButton = document.getElementById(`${item.list}`);
     $removeButton.addEventListener('click', () => {
-      this.remove(`${item.list}`); 
+      this.remove(`${item.list}`);
     });
-  };  
-};
-
+  };
+}
