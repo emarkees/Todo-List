@@ -1,6 +1,8 @@
 /* import _ from 'lodash'; */
 import './style.css';
-import UpdateList from './modules/updateList.js';/*
+import UpdateList from './modules/updateList.js';
+
+/*
 import handleCheckboxChange from './modules/checkbox'; */
 
 document.addEventListener('DOMContentLoaded', () => {
