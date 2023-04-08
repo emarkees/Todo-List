@@ -99,51 +99,6 @@ export default class Todos {
         }
       });
     });
-
-    /* const $editButton = document.getElementById(`edit-${item.description}`);
-    $editButton.addEventListener('click', () => {
-      const $inputField = document.getElementById('input'); // input div
-      $inputField.value = item.description;
-      const $addButton = document.getElementById('addBtn'); // add button
-      $addButton.addEventListener('click', () => {
-        const newDescription = $inputField.value;
-        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
-        if (indexToEdit > -1) {
-          this.edit(indexToEdit, newDescription);
-          $editButton.id = `edit-${newDescription}`;
-          $editButton.textContent = newDescription;
-          $addButton.textContent = newDescription;
-          this.updateIndexes();
-        }
-      });
-    }); */
-
-    /*  const $editButton = document.getElementById(`edit-${item.description}`);
-    $editButton.addEventListener('click', () => {
-      const $inputField = document.getElementById('input'); // input div
-      $inputField.value = item.description;
-      $inputField.addEventListener('change', () => {
-        const newDescription = $inputField.value;
-        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
-        if (indexToEdit > -1) {
-          this.edit(indexToEdit, newDescription);
-          /* this.updateIndexes();
-        }
-      });
-    }); */
-
-    /* const $editButton = document.getElementById(`edit-${item.description}`);
-    $editButton.addEventListener('click', () => {
-      const newDescription = prompt('Enter the new description for this task:', item.description);
-      if (newDescription !== null && newDescription !== '') {
-        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
-        if (indexToEdit > -1) {
-          this.edit(indexToEdit, newDescription);
-          this.updateIndexes();
-        }
-      }
-    });
-    this.updateIndexes(); */
   };
 
   // Define a remove method to remove a todo item from the DOM and the todoList array
