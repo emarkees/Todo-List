@@ -99,21 +99,23 @@ export default class Todos {
         }
       });
     });
-  };
 
-  // Define a remove method to remove a todo item from the DOM and the todoList array
-  remove = (indexToRemove) => {
-    const { parentElement } = document.getElementById(`${this.todoList[indexToRemove].description}`);
-    if (parentElement) {
-      parentElement.remove();
-    }
-
-    if (indexToRemove > -1) {
-      this.todoList.splice(indexToRemove, 1);
-      this.updateIndexes();
+        // Add a click event listener to the checkbox for each todo item
+const $checkboxes = document.querySelectorAll('.checkboxClass');
+$checkboxes.forEach(($checkbox, index) => {
+  $checkbox.addEventListener('click', () => {
+    const todoToUpdate = this.todoList[index];
+    if (todoToUpdate) {
+      todoToUpdate.completed = $checkbox.checked;
       localStorage.setItem('todoList', JSON.stringify(this.todoList));
-      this.updateIndexes(); // Update the indexes after removing an item
     }
+    const $todoDescription = $checkbox.parentElement.nextElementSibling;
+    if ($todoDescription) {
+      $todoDescription.classList.toggle('complete', $checkbox.checked);
+    }
+  });
+});
+
   };
 
   edit = (indexToEdit, newDescription) => {
@@ -131,4 +133,26 @@ export default class Todos {
       localStorage.setItem('todoList', JSON.stringify(this.todoList));
     }
   };
+
+  // Define a remove method to remove a todo item from the DOM and the todoList array
+  remove = (indexToRemove) => {
+    const todoToRemove = this.todoList[indexToRemove];
+  
+    const { parentElement } = document.getElementById(todoToRemove.description);
+    if (parentElement) {
+      parentElement.remove();
+    } else {
+      this.updateIndexes();
+    }
+  
+    if (indexToRemove > -1) {
+      this.todoList.splice(indexToRemove, 1);
+      this.updateIndexes();
+      localStorage.setItem('todoList', JSON.stringify(this.todoList));
+    }
+  
+    this.updateIndexes(); // Update the indexes after removing an item
+  };
+  
+
 }
