@@ -54,7 +54,7 @@ export default class Todos {
           <input type="checkbox" class="checkboxClass" id="myCheckbox">
         </div>
         <li class="list textTodo">${item.description}</li>
-        <i class="fa-solid fa-ellipsis-vertical vertical" ></i>
+        <i class="fa-solid fa-ellipsis-vertical vertical" id="edit-${item.description}" ></i>
         <i class="fa-solid fa-trash-can delete" id="${item.description}"></i>
       </ul>
       `,
@@ -70,6 +70,80 @@ export default class Todos {
       }
     });
     this.updateIndexes(); // Update the indexes after adding an item
+
+    // Add a click event listener to the edit button for the new todo item
+    // Edit button
+    const $editButton = document.getElementById(`edit-${item.description}`);
+    $editButton.addEventListener('click', () => {
+      const $inputField = document.getElementById('input'); // input div
+      $inputField.value = item.description;
+      const $addButton = document.getElementById('addBtn'); // add button
+
+      // Edit button click handler
+      $addButton.addEventListener('click', () => {
+        const newDescription = $inputField.value;
+        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
+
+        if (newDescription !== '' && newDescription !== item.description) {
+          if (indexToEdit > -1) {
+            // Edit item
+            this.edit(indexToEdit, newDescription);
+            $editButton.id = `edit-${newDescription}`;
+            $editButton.textContent = newDescription;
+            this.updateIndexes();
+          }
+        } else {
+          // Delete item previous item
+          this.remove(indexToEdit);
+          $editButton.parentElement.removeChild($editButton);
+        }
+      });
+    });
+
+    /* const $editButton = document.getElementById(`edit-${item.description}`);
+    $editButton.addEventListener('click', () => {
+      const $inputField = document.getElementById('input'); // input div
+      $inputField.value = item.description;
+      const $addButton = document.getElementById('addBtn'); // add button
+      $addButton.addEventListener('click', () => {
+        const newDescription = $inputField.value;
+        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
+        if (indexToEdit > -1) {
+          this.edit(indexToEdit, newDescription);
+          $editButton.id = `edit-${newDescription}`;
+          $editButton.textContent = newDescription;
+          $addButton.textContent = newDescription;
+          this.updateIndexes();
+        }
+      });
+    }); */
+
+    /*  const $editButton = document.getElementById(`edit-${item.description}`);
+    $editButton.addEventListener('click', () => {
+      const $inputField = document.getElementById('input'); // input div
+      $inputField.value = item.description;
+      $inputField.addEventListener('change', () => {
+        const newDescription = $inputField.value;
+        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
+        if (indexToEdit > -1) {
+          this.edit(indexToEdit, newDescription);
+          /* this.updateIndexes();
+        }
+      });
+    }); */
+
+    /* const $editButton = document.getElementById(`edit-${item.description}`);
+    $editButton.addEventListener('click', () => {
+      const newDescription = prompt('Enter the new description for this task:', item.description);
+      if (newDescription !== null && newDescription !== '') {
+        const indexToEdit = this.todoList.findIndex((e) => e.description === item.description);
+        if (indexToEdit > -1) {
+          this.edit(indexToEdit, newDescription);
+          this.updateIndexes();
+        }
+      }
+    });
+    this.updateIndexes(); */
   };
 
   // Define a remove method to remove a todo item from the DOM and the todoList array
@@ -84,6 +158,22 @@ export default class Todos {
       this.updateIndexes();
       localStorage.setItem('todoList', JSON.stringify(this.todoList));
       this.updateIndexes(); // Update the indexes after removing an item
+    }
+  };
+
+  edit = (indexToEdit, newDescription) => {
+    // Retrieve the todo item to edit from the todoList array
+    const todoToEdit = this.todoList[indexToEdit];
+
+    // If the todo item exists, update its description and update the DOM
+    if (todoToEdit) {
+      todoToEdit.description = newDescription;
+      const $todoDescription = document.querySelector(`.textTodo[data-index="${indexToEdit}"]`);
+      if ($todoDescription) {
+        $todoDescription.textContent = newDescription;
+        this.updateIndexes();
+      }
+      localStorage.setItem('todoList', JSON.stringify(this.todoList));
     }
   };
 }
