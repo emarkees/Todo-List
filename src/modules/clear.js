@@ -1,4 +1,4 @@
-/*const $todos = document.querySelector('.todoContainer');
+/* const $todos = document.querySelector('.todoContainer');
 
 clearCompleted = () => {
   // Use filter() to create a new array of all the incomplete todos
@@ -16,9 +16,12 @@ clearCompleted = () => {
       'beforeend',
       `<ul class="listcontainer ">
         <div class="checBox">
-          <input type="checkbox" class="checkboxClass" id="myCheckbox" ${todo.completed ? 'checked' : ''}>
+          <input type="checkbox" class="checkboxClass" id="myCheckbox"
+          ${todo.completed ? 'checked' : ''}>
         </div>
-        <li class="list textTodo"${todo.completed ? ' class="complete"' : ''} data-index="${index}">${todo.description}</li>
+        <li class="list textTodo"${todo.completed ? ' class="complete"' : ''}
+          data-index="${index}">${todo.description}
+        </li>
         <i class="fa-solid fa-ellipsis-vertical vertical" id="edit-${todo.description}" ></i>
         <i class="fa-solid fa-trash-can delete" id="${todo.description}"></i>
       </ul>
@@ -78,4 +81,4 @@ clearCompleted = () => {
   // Update local storage with the new todoList array
   localStorage.setItem('todoList', JSON.stringify(this.todoList));
 };
-export default clearCompleted;*/
+export default clearCompleted; */
