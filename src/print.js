@@ -101,9 +101,9 @@ export default class Todos {
     });
 
     // Add a click event listener to the checkbox for each todo item
-    const $checkboxes = document.querySelectorAll('.checkboxClass');
+   /*const $checkboxes = document.querySelectorAll('.checkboxClass');
     $checkboxes.forEach(($checkbox, index) => {
-      $checkbox.addEventListener('click', () => {
+      $checkbox.addEventListener('change', () => {
         const todoToUpdate = this.todoList[index];
         if (todoToUpdate) {
           todoToUpdate.completed = $checkbox.checked;
@@ -113,8 +113,8 @@ export default class Todos {
         if ($todoDescription) {
           $todoDescription.classList.toggle('complete', $checkbox.checked);
         }
-      });
-    });
+      });this.updateIndexes()
+    }); */
   };
 
   edit = (indexToEdit, newDescription) => {
