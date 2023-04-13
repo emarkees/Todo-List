@@ -8,6 +8,7 @@ body {
   font-family: 'poppins', sans-serif;
   font-weight: 300;
   font-size: 1rem;
+  color: #fff;
 }
 
 .container {
@@ -16,7 +17,8 @@ body {
 }
 
 hr {
-  width: 100%;
+  width: auto;
+  margin: 0;
 }
 
 .header {
@@ -27,7 +29,6 @@ hr {
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
-  background: #fff;
 }
 
 .buttonload {
@@ -40,7 +41,7 @@ hr {
   width: 100%;
   height: auto;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 .fa-refresh {
@@ -58,10 +59,12 @@ ul li {
 .todo {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   height: auto;
   align-self: center;
   border: 0.1rem solid grey;
+  padding: 0;
+  background: #9cc6ee;
 }
 
 .todoContainer {
@@ -69,8 +72,8 @@ ul li {
   flex-direction: column;
   width: auto;
   height: auto;
-  gap: 0;
-  padding: 0.5rem;
+  gap: 0.2rem;
+  padding: 0;
 }
 
 .right {
@@ -84,17 +87,20 @@ ul li {
   height: auto;
   padding: 0;
   margin: 0;
+  gap: 1rem;
 }
 
 .listcontainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  height: 2.5rem;
-  padding: 0;
+  justify-content: center;
+  gap: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.4rem;
   margin: 0;
+  border: 0.1rem solid;
 }
 
 .list {
@@ -121,15 +127,17 @@ ul li {
   display: flex;
   width: 100%;
   border: none;
-  padding: 0.5rem;
+  padding: 0.2rem;
   margin: 0;
   order: 1;
+  gap: 0.5rem;
+  justify-content: space-around;
 }
 
 .input {
   display: flex;
   width: 100%;
-  height: 2rem;
+  padding: 0.5rem;
   border: none;
 }
 
@@ -142,6 +150,16 @@ ul li {
   display: flex;
   align-items: flex-end;
   order: 3;
+  color: gray;
+  cursor: pointer;
+}
+
+.delete {
+  display: flex;
+  align-items: flex-end;
+  order: 3;
+  color: red;
+  cursor: pointer;
 }
 
 .button {
@@ -156,8 +174,21 @@ ul li {
 .addBtn {
   display: flex;
   align-self: center;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  cursor: pointer;
   width: 2rem;
-  background: #000;
+  height: 1.5rem;
+  color: #badb39;
+}
+
+.error {
+  display: none;
+  font-size: 1rem;
+  color: red;
+  transition: 0.3s ease-in-out;
+  text-align: center;
 }
 
 @media (min-width: 768px) {

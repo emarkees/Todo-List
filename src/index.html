@@ -27,8 +27,9 @@
       <hr>
       <section id="addNew" class="newAddList">
         <form action="" class="form">
-          <input type="text" placeholder="Add to your list ..." class="input"><span class="addBtn">↵</span>
+          <input type="text" placeholder="Add to your list ..." class="input" id="input"><i class="fa-solid fa-square-plus fa-2xl addBtn" id="addBtn"></i>
         </form>
+        <div class="error">Please, complete all fields.</div>
       </section>
       <hr>
       <div class="todoContainer">
@@ -42,12 +43,11 @@
           </li>
         </ul>-->
       </div>
-      <button class="button">
+      <button type="reset" class="button" id="clear">
         <h5>Clear all completed</h5>
       </button>
     </section>
     
-
 </body>
 
 </html>
