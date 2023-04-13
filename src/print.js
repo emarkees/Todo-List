@@ -124,10 +124,12 @@ export default class Todos {
     // If the todo item exists, update its description and update the DOM
     if (todoToEdit) {
       todoToEdit.description = newDescription;
+      console.log('9')
       const $todoDescription = document.querySelector(`.textTodo[data-index="${indexToEdit}"]`);
       if ($todoDescription) {
         $todoDescription.textContent = newDescription;
         this.updateIndexes();
+        console.log('8')
       }
       localStorage.setItem('todoList', JSON.stringify(this.todoList));
     }
@@ -139,16 +141,21 @@ export default class Todos {
 
     if (todoToRemove) { // Check if todoToRemove is defined
       const { parentElement } = document.getElementById(todoToRemove.description);
+      console.log('4')
       if (parentElement) {
         parentElement.remove();
+        console.log('5')
       } else {
         this.updateIndexes();
+        console.log('6')
       }
 
       if (indexToRemove > -1) {
         this.todoList.splice(indexToRemove, 1);
         this.updateIndexes();
         localStorage.setItem('todoList', JSON.stringify(this.todoList));
+        console.log('7')
+        
       }
 
       this.updateIndexes(); // Update the indexes after removing an item
