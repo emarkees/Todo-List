@@ -64,7 +64,7 @@ In this project, I build a simple HTML list of To Do tasks. The list will be sty
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- 
+- (https://emarkees.github.io/Todo-List/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
