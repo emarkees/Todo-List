@@ -3,7 +3,7 @@ function clearCheckedItems(todoList) {
   $clearBtn.addEventListener('click', () => {
     todoList = todoList.filter((todo) => !todo.completed);
     localStorage.setItem('todoList', JSON.stringify(todoList));
-    location.reload(); // reload the page
+    window.location.reload(); // reload the page
   });
 }
 
