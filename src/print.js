@@ -90,7 +90,6 @@ export default class Todos {
         }
       });
     });
-
   };
 
   edit = (indexToEdit, newDescription) => {
@@ -111,7 +110,7 @@ export default class Todos {
   remove = (indexToRemove) => {
     const todoToRemove = this.todoList[indexToRemove];
 
-    if (todoToRemove) { 
+    if (todoToRemove) {
       const { parentElement } = document.getElementById(todoToRemove.description);
       if (parentElement) {
         parentElement.remove();
