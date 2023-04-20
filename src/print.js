@@ -1,16 +1,11 @@
 const $todos = document.querySelector('.todoContainer');
 
-// Export a Todos class as the default export
 export default class Todos {
-  // Define a constructor for the Todos class
   constructor() {
-    // Retrieve the todoList array from local storage or create an empty array if none exists
     this.todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
-    // If the todoList array is not empty, loop through each item and add it to the DOM
     if (this.todoList.length > 0) {
       this.todoList.forEach((todo, index) => {
-        // Use insertAdjacentHTML to add a new todo item to the DOM
         $todos.insertAdjacentHTML(
           'beforeend',
           `<ul class="listcontainer ">
@@ -60,7 +55,7 @@ export default class Todos {
       `,
     );
     localStorage.setItem('todoList', JSON.stringify(this.todoList));
-    // Add a click event listener to the remove button for the new todo item
+
     const $removeButton = document.getElementById(`${item.description}`);
     $removeButton.addEventListener('click', () => {
       const indexToRemove = this.todoList.findIndex((e) => e.description === item.description);
@@ -71,7 +66,6 @@ export default class Todos {
     });
     this.updateIndexes(); // Update the indexes after adding an item
 
-    // Add a click event listener to the edit button for the new todo item
     // Edit button
     const $editButton = document.getElementById(`edit-${item.description}`);
     $editButton.addEventListener('click', () => {
@@ -86,43 +80,21 @@ export default class Todos {
 
         if (newDescription !== '' && newDescription !== item.description) {
           if (indexToEdit > -1) {
-            // Edit item
-
             this.edit(indexToEdit, newDescription);
             $editButton.id = `edit-${newDescription}`;
             $editButton.textContent = newDescription;
             this.updateIndexes();
           }
         } else {
-          // Delete item previous item
-          // $editButton.parentElement.removeChild($editButton);
           this.remove(indexToEdit);
         }
       });
     });
-
-    // Add a click event listener to the checkbox for each todo item
-    /* const $checkboxes = document.querySelectorAll('.checkboxClass');
-    $checkboxes.forEach(($checkbox, index) => {
-      $checkbox.addEventListener('change', () => {
-        const todoToUpdate = this.todoList[index];
-        if (todoToUpdate) {
-          todoToUpdate.completed = $checkbox.checked;
-          localStorage.setItem('todoList', JSON.stringify(this.todoList));
-        }
-        const $todoDescription = $checkbox.parentElement.nextElementSibling;
-        if ($todoDescription) {
-          $todoDescription.classList.toggle('complete', $checkbox.checked);
-        }
-      });this.updateIndexes()
-    }); */
   };
 
   edit = (indexToEdit, newDescription) => {
-    // Retrieve the todo item to edit from the todoList array
     const todoToEdit = this.todoList[indexToEdit];
 
-    // If the todo item exists, update its description and update the DOM
     if (todoToEdit) {
       todoToEdit.description = newDescription;
       const $todoDescription = document.querySelector(`.textTodo[data-index="${indexToEdit}"]`);
@@ -138,7 +110,7 @@ export default class Todos {
   remove = (indexToRemove) => {
     const todoToRemove = this.todoList[indexToRemove];
 
-    if (todoToRemove) { // Check if todoToRemove is defined
+    if (todoToRemove) {
       const { parentElement } = document.getElementById(todoToRemove.description);
       if (parentElement) {
         parentElement.remove();
@@ -152,7 +124,7 @@ export default class Todos {
         localStorage.setItem('todoList', JSON.stringify(this.todoList));
       }
 
-      this.updateIndexes(); // Update the indexes after removing an item
+      this.updateIndexes();
     }
   };
 }
